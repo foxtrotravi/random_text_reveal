@@ -1,6 +1,6 @@
 name: random_text_reveal
-description: A text animation package with random text reveal effect
-version: 0.0.1
+description: A text animation package with random text reveal effect where the text reveals itself letter by letter (used mostly in movies)
+version: 0.0.2
 homepage: https://github.com/foxtrotravi/random_text_reveal
 
 environment:

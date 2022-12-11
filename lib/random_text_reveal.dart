@@ -5,6 +5,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RandomTextReveal extends StatefulWidget {
+  /// Creates an animated text widget.
+  ///
+  /// If the [style] argument is null, the text will use the style from the
+  /// closest enclosing [DefaultTextStyle].
+  ///
+  /// The [data] parameter must not be null.
+  ///
+  /// The [overflow] property's behavior is affected by the [softWrap] argument.
+  /// If the [softWrap] is true or null, the glyph causing overflow, and those that follow,
+  /// will not be rendered. Otherwise, it will be shown with the given overflow option.
   const RandomTextReveal({
     Key? key,
     required this.text,
@@ -21,17 +31,41 @@ class RandomTextReveal extends StatefulWidget {
     this.semanticsLabel,
   }) : super(key: key);
 
+  /// The text to display.
   final String text;
+
+  /// The text from which random characters will be displayed before
+  /// the actual character
   final String randomString;
+
+  /// The length of time this animation should last.
   final Duration duration;
+
+  /// A collection of common animation curves.
   final Curve curve;
+
+  /// The style of the text with specified color, fontWeight, fontSize
   final TextStyle? style;
+
+  /// Represents directionality of text.
   final TextDirection? textDirection;
+
+  /// The Locale used for multiple language support
   final Locale? locale;
+
+  /// The maximum number of lines of the text to be displayed before cropping
   final int? maxLines;
+
+  /// The type of overflow in text
   final TextOverflow? overflow;
+
+  /// Whether the text should break at soft line breaks.
   final bool? softWrap;
+
+  /// How the text should be aligned horizontally.
   final TextAlign? textAlign;
+
+  /// An alternative semantics label for this text.
   final String? semanticsLabel;
 
   @override
