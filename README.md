@@ -1,39 +1,57 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+[![pub package](https://img.shields.io/pub/v/random_text_reveal.svg)](https://pub.dev/packages/random_text_reveal) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Random Text Reveal
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package that helps you create animated Text widgets with Random Text Reveal 
+Effect for all platforms.
 
-## Features
+# Simple Usage
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+You should pass in a text value to the RandomTextReveal widget. It will automatically
+animate by generating random characters & slowly reveal text one by one. There are a 
+few customizable options like style, duration, randomString etc.
 
 ```dart
-const like = 'sample';
+const RandomTextReveal(
+  text: 'Random Text Reveal',
+  duration: Duration(seconds: 2),
+  style: TextStyle(
+    fontSize: 36,
+    color: Colors.blue,
+    fontWeight: FontWeight.bold,
+  ),
+  curve: Curves.easeIn,
+)
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+!['random-text-reveal-preview'](https://media.giphy.com/media/jFhh29lqxsHw9nrFYi/giphy.gif)
+
+### Parameters
+
+#### `begin: double`
+#### `text: String`
+
+#### `randomString: String`
+
+#### `duration: Duration`
+
+#### `curve: Curve`
+
+#### ` style: TextStyle?`
+
+#### ` textDirection: TextDirection?`
+
+#### ` locale: Locale?`
+
+#### ` maxLines: int?`
+
+#### ` overflow: TextOverflow?`
+
+#### ` softWrap: bool?`
+
+#### ` textAlign: TextAlign?`
+
+#### ` semanticsLabel: String?`

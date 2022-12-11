@@ -1,7 +1,7 @@
 name: random_text_reveal
 description: A text animation package with random text reveal effect
 version: 0.0.1
-homepage:
+homepage: https://github.com/foxtrotravi/random_text_reveal
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -17,32 +17,3 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
