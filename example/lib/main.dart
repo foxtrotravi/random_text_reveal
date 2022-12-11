@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 // OUR PACKAGE
 import 'package:random_text_reveal/random_text_reveal.dart';
 
+final GlobalKey<RandomTextRevealState> globalKey = GlobalKey();
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -25,12 +27,19 @@ class MyApp extends StatelessWidget {
         body: Container(
           padding: const EdgeInsets.all(20),
           alignment: Alignment.centerLeft,
-          child: const RandomTextReveal(
+          child: RandomTextReveal(
+            key: globalKey,
             text: 'Random Text Reveal',
-            duration: Duration(seconds: 2),
+            duration: const Duration(seconds: 2),
             style: textStyle,
             curve: Curves.easeIn,
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.play_arrow),
+          onPressed: () {
+            globalKey.currentState?.play();
+          },
         ),
       ),
     );

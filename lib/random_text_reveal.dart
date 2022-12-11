@@ -69,10 +69,10 @@ class RandomTextReveal extends StatefulWidget {
   final String? semanticsLabel;
 
   @override
-  State<RandomTextReveal> createState() => _RandomTextRevealState();
+  State<RandomTextReveal> createState() => RandomTextRevealState();
 }
 
-class _RandomTextRevealState extends State<RandomTextReveal>
+class RandomTextRevealState extends State<RandomTextReveal>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -101,7 +101,7 @@ class _RandomTextRevealState extends State<RandomTextReveal>
         setState(() {});
       });
 
-    _controller.forward();
+    play();
   }
 
   @override
@@ -137,5 +137,9 @@ class _RandomTextRevealState extends State<RandomTextReveal>
     }
 
     return '$substring${randomString.toString()}';
+  }
+
+  void play({double from = 0}) {
+    _controller.forward(from: from);
   }
 }
