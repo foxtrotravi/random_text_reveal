@@ -27,7 +27,7 @@ const RandomTextReveal(
 ```
 
 
-!['random-text-reveal-preview'](https://media.giphy.com/media/jFhh29lqxsHw9nrFYi/giphy.gif)
+!['random-text-reveal-preview'](https://media.giphy.com/media/ENweHBIx5F2iIBRtwM/giphy.gif)
 
 ### Parameters
 
