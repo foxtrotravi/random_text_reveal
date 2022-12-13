@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Add a method to explicitly start playing animation with an optional forward value.
+
+## 0.0.4
+
+* Add an optional method to run on animation completion & helper class to return pre-defined strings.

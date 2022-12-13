@@ -4,13 +4,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+class Source {
+  static const digits = '0123456789';
+  static const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  static const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+  static const alphabets = '$uppercase$lowercase';
+  static const specialCharacters = '`~!@#\$%^&*()_+-=[]{}\\|;:\'".>/?';
+  static const all = '$digits$alphabets$specialCharacters';
+}
+
 class RandomTextReveal extends StatefulWidget {
   /// Creates an animated text widget.
   ///
   /// If the [style] argument is null, the text will use the style from the
   /// closest enclosing [DefaultTextStyle].
-  ///
-  /// The [data] parameter must not be null.
   ///
   /// The [overflow] property's behavior is affected by the [softWrap] argument.
   /// If the [softWrap] is true or null, the glyph causing overflow, and those that follow,
@@ -19,8 +26,9 @@ class RandomTextReveal extends StatefulWidget {
     Key? key,
     required this.text,
     this.style,
-    this.randomString = 'ABCDEFGHJKLMNOPQRSTUVWXYZ',
+    this.randomString = Source.uppercase,
     this.duration = const Duration(seconds: 2),
+    this.onFinished,
     this.curve = Curves.easeIn,
     this.textDirection = TextDirection.ltr,
     this.locale,
@@ -40,6 +48,9 @@ class RandomTextReveal extends StatefulWidget {
 
   /// The length of time this animation should last.
   final Duration duration;
+
+  /// A function which will be triggered at the end of animation
+  final VoidCallback? onFinished;
 
   /// A collection of common animation curves.
   final Curve curve;
@@ -120,7 +131,10 @@ class RandomTextRevealState extends State<RandomTextReveal>
   }
 
   String _animatedText({required String text, required int value}) {
-    if (value == text.length) return text;
+    if (value == text.length) {
+      widget.onFinished?.call();
+      return text;
+    }
 
     String substring = text.substring(0, value);
 

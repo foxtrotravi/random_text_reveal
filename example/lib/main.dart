@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // OUR PACKAGE
 import 'package:random_text_reveal/random_text_reveal.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor: Colors.black,
       ),
       home: Scaffold(
         body: Container(
@@ -29,10 +31,23 @@ class MyApp extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: RandomTextReveal(
             key: globalKey,
-            text: 'Random Text Reveal',
+            text: 'PASSWORD',
             duration: const Duration(seconds: 2),
-            style: textStyle,
+            style: GoogleFonts.orbitron(
+              textStyle: const TextStyle(
+                fontSize: 24,
+                color: Colors.green,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 8,
+              ),
+            ),
+            randomString: Source.alphabets,
+            onFinished: () {
+              debugPrint('Password cracked successfully');
+            },
             curve: Curves.easeIn,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
           ),
         ),
         floatingActionButton: FloatingActionButton(
