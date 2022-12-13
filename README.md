@@ -9,9 +9,9 @@ Effect for all platforms.
 
 # Simple Usage
 
-You should pass in a text value to the RandomTextReveal widget. It will automatically
-animate by generating random characters & slowly reveal text one by one. There are a 
-few customizable options like style, duration, randomString etc.
+You should pass in a text value to the `RandomTextReveal` widget. It will automatically
+animate by generating random characters & slowly reveal text one by one. You can customize
+the text by various parameters: `style`, `duration`, `randomString` etc.
 
 ```dart
 const RandomTextReveal(
@@ -26,32 +26,48 @@ const RandomTextReveal(
 )
 ```
 
+# Customized Usage
+
+You can customize the `RandomTextReveal` widget by overriding the default values. Using 
+[GoogleFonts package](https://pub.dev/packages/google_fonts), you can make it a lot appealing
+
+```dart
+RandomTextReveal(
+  key: globalKey,
+  text: 'PASSWORD',
+  duration: const Duration(seconds: 2),
+  style: GoogleFonts.orbitron(
+    textStyle: const TextStyle(
+      fontSize: 24,
+      color: Colors.green,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 8,
+    ),
+  ),
+  randomString: Source.alphabets,
+  onFinished: () {
+    debugPrint('Password cracked successfully');
+  },
+  curve: Curves.easeIn,
+  overflow: TextOverflow.ellipsis,
+  maxLines: 2,
+)
+```
 
 !['random-text-reveal-preview'](https://media.giphy.com/media/ENweHBIx5F2iIBRtwM/giphy.gif)
 
 ### Parameters
 
-#### `begin: double`
-#### `text: String`
-
-#### `randomString: String`
-
-#### `duration: Duration`
-
-#### `curve: Curve`
-
-#### ` style: TextStyle?`
-
-#### ` textDirection: TextDirection?`
-
-#### ` locale: Locale?`
-
-#### ` maxLines: int?`
-
-#### ` overflow: TextOverflow?`
-
-#### ` softWrap: bool?`
-
-#### ` textAlign: TextAlign?`
-
-#### ` semanticsLabel: String?`
+* `text: String`
+* `randomString: String`
+* `duration: Duration`
+* `onFinished: VoidCallback?`
+* `curve: Curve`
+* `style: TextStyle?`
+* `textDirection: TextDirection?`
+* `locale: Locale?`
+* `maxLines: int?`
+* `overflow: TextOverflow?`
+* `softWrap: bool?`
+* `textAlign: TextAlign?`
+* `semanticsLabel: String?`
