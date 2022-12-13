@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Add an optional method to run on animation completion & helper class to return pre-defined strings.
+
+## 0.0.5
+
+* Update README.md to include simple & customized usage.
