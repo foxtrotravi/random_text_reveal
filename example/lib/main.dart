@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: RandomTextReveal(
             key: globalKey,
+            initialText: 'Ae8&vNQ32cK^',
+            shouldPlayOnStart: false,
             text: 'PASSWORD',
             duration: const Duration(seconds: 2),
             style: GoogleFonts.orbitron(

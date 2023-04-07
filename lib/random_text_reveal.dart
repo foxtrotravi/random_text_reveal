@@ -25,6 +25,8 @@ class RandomTextReveal extends StatefulWidget {
   const RandomTextReveal({
     Key? key,
     required this.text,
+    this.initialText,
+    this.shouldPlayOnStart = true,
     this.style,
     this.randomString = Source.uppercase,
     this.duration = const Duration(seconds: 2),
@@ -39,8 +41,14 @@ class RandomTextReveal extends StatefulWidget {
     this.semanticsLabel,
   }) : super(key: key);
 
-  /// The text to display.
+  /// The text to display after animation is finished.
   final String text;
+
+  /// Initial random text that you want to display
+  final String? initialText;
+
+  /// Boolean flag to auto play animation on start
+  final bool shouldPlayOnStart;
 
   /// The text from which random characters will be displayed before
   /// the actual character
@@ -112,13 +120,18 @@ class RandomTextRevealState extends State<RandomTextReveal>
         setState(() {});
       });
 
-    play();
+    if (widget.shouldPlayOnStart) {
+      play();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      _animatedText(text: widget.text, value: _animation.value.toInt()),
+      _animatedText(
+        text: widget.text,
+        value: _animation.value.toInt(),
+      ),
       style: widget.style,
       textDirection: widget.textDirection,
       locale: widget.locale,
@@ -131,6 +144,10 @@ class RandomTextRevealState extends State<RandomTextReveal>
   }
 
   String _animatedText({required String text, required int value}) {
+    if (!_controller.isAnimating && !_controller.isCompleted) {
+      return widget.initialText ?? '';
+    }
+
     if (value == text.length) {
       widget.onFinished?.call();
       return text;
