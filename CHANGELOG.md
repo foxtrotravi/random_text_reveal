@@ -17,3 +17,8 @@
 ## 0.0.5
 
 * Update README.md to include simple & customized usage.
+
+## 0.0.6
+
+* Add an attribute shouldPlayOnStart to customize auto play of animation
+* Add an attribute initialText to display before playing animation
