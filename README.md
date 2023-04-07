@@ -35,6 +35,8 @@ You can customize the `RandomTextReveal` widget by overriding the default values
 RandomTextReveal(
   key: globalKey,
   text: 'PASSWORD',
+  initialText: 'Ae8&vNQ32cK^',
+  shouldPlayOnStart: false,
   duration: const Duration(seconds: 2),
   style: GoogleFonts.orbitron(
     textStyle: const TextStyle(
@@ -59,6 +61,8 @@ RandomTextReveal(
 ### Parameters
 
 * `text: String`
+* `initialText: String?`
+* `shouldPlayOnStart: bool`
 * `randomString: String`
 * `duration: Duration`
 * `onFinished: VoidCallback?`
