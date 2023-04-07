@@ -13,12 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const textStyle = TextStyle(
-      fontSize: 36,
-      color: Colors.blue,
-      fontWeight: FontWeight.bold,
-    );
-
     return MaterialApp(
       title: 'Example',
       theme: ThemeData(
