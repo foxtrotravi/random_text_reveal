@@ -1,6 +1,7 @@
 ## 0.0.7
 * Update tests in example app.
 * Update CHANGELOG order.
+* Update sdk constraint.
 
 ## 0.0.6
 
