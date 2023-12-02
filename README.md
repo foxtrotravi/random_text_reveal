@@ -1,10 +1,10 @@
-[![pub package](https://img.shields.io/pub/v/random_text_reveal.svg)](https://pub.dev/packages/random_text_reveal) 
+[![pub package](https://img.shields.io/pub/v/random_text_reveal.svg)](https://pub.dev/packages/random_text_reveal)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 # Random Text Reveal
 
-A Flutter package that helps you create animated Text widgets with Random Text Reveal 
+A Flutter package that helps you create animated Text widgets with Random Text Reveal
 Effect for all platforms.
 
 # Simple Usage
@@ -28,7 +28,7 @@ const RandomTextReveal(
 
 # Customized Usage
 
-You can customize the `RandomTextReveal` widget by overriding the default values. Using 
+You can customize the `RandomTextReveal` widget by overriding the default values. Using
 [GoogleFonts package](https://pub.dev/packages/google_fonts), you can make it a lot appealing
 
 ```dart
