@@ -8,23 +8,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:example/main.dart';
+import 'package:random_text_reveal/random_text_reveal.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Random Text Reveal test', (WidgetTester tester) async {
+    const widget = RandomTextReveal(
+      text: 'Random Text Reveal',
+      duration: Duration(seconds: 2),
+      style: TextStyle(
+        fontSize: 36,
+        color: Colors.blue,
+        fontWeight: FontWeight.bold,
+      ),
+      curve: Curves.easeIn,
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: widget,
+        ),
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.byType(RandomTextReveal), findsOne);
   });
 }
